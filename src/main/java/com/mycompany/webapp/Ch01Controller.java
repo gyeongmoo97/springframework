@@ -19,7 +19,7 @@ public class Ch01Controller {
 	
 	@RequestMapping("/content")
 	public String content() {
-		logger.info("실행1");
+		logger.info("실행1 " );
 		logger.warn("실행2");
 		logger.debug("실행3");
 		logger.error("실행4");
