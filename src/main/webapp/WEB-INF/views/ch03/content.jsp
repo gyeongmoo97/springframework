@@ -184,7 +184,7 @@
     	  const param2 = document.querySelector("#param2").value; //94줄
     	  const param3 = $("#param3").val();
     /* 	  const param4 = $("#form1 input[type==ridio]"); //108줄 ->  */
-    	  const param4 = $("#form1 input[name=param4]:checked").val(); //108줄 -> 2개 찾는다. check 된것만 찾아오기
+    	const param4 = $("#form1 input[name=param4]:checked").val(); //108줄 -> 2개 찾는다. check 된것만 찾아오기
     	  const param5 = $("#param5").val();
     	  
     	  console.log("param1 :" , param1);
