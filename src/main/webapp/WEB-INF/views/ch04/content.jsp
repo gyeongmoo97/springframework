@@ -226,7 +226,7 @@
 					<div class="card-body">
 
 
-						<form method="post" action="method2">
+						<form method="post" action="join">
 							<div class="input-group">
 								<div class="input-group-prepend">
 									<span class="input-group-text">mid</span>
@@ -262,10 +262,43 @@
 							<input class="btn btn-info" type="submit" value="가입" />
 						</form>
 					</div>
+
+
 				</div>
+				<div class="card m-2">
+					<div class="card-header">서버측 유효성 검사</div>
+					<div class="card-body">
+						<div class="card m-2">
+							<div class="card-header">로그인폼</div>
+							<div class="card-body">
+								<form method="post" action="login">
+									<div class="input-group">
+										<div class="input-group-prepend">
+											<span class="input-group-text">mid</span>
+										</div>
+										<input type="text" name="mid" class="form-control"
+											value="${loginForm.mid}">
+										<form:errors cssClass="text-danger" path="loginForm.mid" />
+									</div>
+									<div class="input-group">
+										<div class="input-group-prepend">
+											<span class="input-group-text">mpassword</span>
+										</div>
+										<input type="password" name="mpassword" class="form-control"
+											value="${loginForm.mpassword}">
+										<form:errors cssClass="text-danger" path="loginForm.mpassword" />
+									</div>
+									<input class="btn btn-info" type="submit" value="로그인" />
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+
+
+
+
 			</div>
 		</div>
-	</div>
-</div>
 
-<%@ include file="/WEB-INF/views/common/footer.jsp"%>
+		<%@ include file="/WEB-INF/views/common/footer.jsp"%>

@@ -59,19 +59,45 @@ public class Ch04Controller {
 	}
 
 	// BindingResult 사용예제
-	@PostMapping("/method2")
+	@PostMapping("/join")
 	// BindingResult bindingReult 유효성감사의 결과를 의미함 Errors error 이 와도됨. ppt 유효성 실패 저장
 	// 파트임
 	public String join(@ModelAttribute("joinForm") @Valid Ch04Member member, BindingResult bindingReult) {
 		logger.info("실행");
 		if (bindingReult.hasErrors()) {
 			logger.info("다시 입력폼 제공 + err msg");
+			//forward
 			return "ch04/content";
 		} else {
 			logger.info("정상 요청 처리후 응답 제공");
+			//redirect
 			return "redirect:/ch04/content";
 		}
 
+	}
+	
+	@InitBinder("loginForm")
+	public void loginFormSetValidator(WebDataBinder binder) {
+		logger.info("실행");
+		binder.addValidators(
+			new Ch04MemberIdValidator(),
+			new Ch04MemberPasswordValidator()
+		);
+	}
+	
+	
+	@PostMapping("/login")
+	public String login(@ModelAttribute("loginForm") @Valid Ch04Member member, Errors errors) {
+		logger.info("실행");
+		if(errors.hasErrors()) {
+			logger.info("다시 입력폼 제공 + err msg");
+			//forward
+			return "ch04/content";
+		} else {
+			logger.info("정상 요청 처리후 응답 제공");
+			//redirect
+			return "redirect:/";
+		}
 	}
 
 	// Errors 사용 예제
