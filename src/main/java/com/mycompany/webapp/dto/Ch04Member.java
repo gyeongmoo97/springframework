@@ -5,7 +5,7 @@ public class Ch04Member {
 	private String mpassword;
 	private String memail;
 	private String mtel;
-	// 이름은 input으로 받는 파라미터의 name속성과 같아야한다
+	
 	public String getMid() {
 		return mid;
 	}
@@ -30,5 +30,4 @@ public class Ch04Member {
 	public void setMtel(String mtel) {
 		this.mtel = mtel;
 	}
-	
 }
