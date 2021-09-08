@@ -25,19 +25,18 @@
 
 
 		<form:form modelAttribute="member" method="post" action="form3">
-			<div style="margin: 0; padding: 0">
+			<div>
 				<form:checkboxes items="${languageList}" path="mlanguage"
-					Class="ml-2"
 				/>
 
 			</div>
 			<hr>
-
+<button class ="btn btn-success btn-sm">제출</button>
 		</form:form>
 
 		<form:form modelAttribute="member" method="post" action="form3">
 
-			<div class="form-check form-check-inline">
+			<div >
 				<form:checkboxes items="${skillList}" path="mskill" itemValue="code"
 					itemLabel="label"
 				/>

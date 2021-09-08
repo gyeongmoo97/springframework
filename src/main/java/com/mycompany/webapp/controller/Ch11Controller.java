@@ -164,7 +164,7 @@ public class Ch11Controller {
 	}
 	
 	@GetMapping("/form4")
-	public String handleForm4(@ModelAttribute("member") Ch11Member member, Model model) {
+	public String Form4(@ModelAttribute("member") Ch11Member member, Model model) {
 		logger.info("실행");
 		
 		java.util.List<String> languageList = new ArrayList<String>();
@@ -194,6 +194,8 @@ public class Ch11Controller {
 		
 		return "ch11/form4";
 	}
+	
+
 	
 	@PostMapping("/form4")
 	public String handleForm4(@ModelAttribute("member") Ch11Member member) {

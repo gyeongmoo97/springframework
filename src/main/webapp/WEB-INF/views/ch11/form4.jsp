@@ -24,7 +24,7 @@
 		</form>
 
 
-<%-- 		<form:form modelAttribute="member" method="post" action="form4">
+ 	<%-- 	<form:form modelAttribute="member" method="post" action="form4">
 			<div style="margin: 0; padding: 0">
 				<form:radiobuttons items="${languageList}" path="mlanguage"
 					Class="ml-2"
@@ -42,7 +42,7 @@
 					itemLabel="label"
 				/>
 			</div>
-		</form:form> --%>
+		</form:form>  --%>
 
 	</div>
 	<!--카드 내용 끝 -->
