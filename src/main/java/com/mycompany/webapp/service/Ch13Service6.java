@@ -36,21 +36,6 @@ public class Ch13Service6 {
 		this.prop3 = prop3;
 	}
 
-	/*	@Value("${service.prop3}")
-		public void setProp3(boolean prop3) {
-			logger.info("실행");
-			logger.info("prop3 : " + prop3);
-			this.prop3 = prop3;
-		}*/
 
-	/*	public void Ch13Service6(
-				@Value("${service.prop3}") boolean prop3, 
-				@Value("${service.prop4}")String prop4) {
-			logger.info("실행");
-			this.prop3 = prop3;
-			this.prop4 = prop4;
-			logger.info("prop3: "+ prop3);
-			logger.info("prop4: "+ prop4);
-		}*/
 
 }

@@ -15,13 +15,13 @@
 
 	<!-- setter 주입 -->
 
-	<!-- <bean id="ch13Service1" class="com.mycompany.webapp.service.Ch13Service1"> 
-		<property name="ch13BoardDao1" ref="ch13BoardDao1"></property> </bean> -->
+<bean id="ch13Service1" class="com.mycompany.webapp.service.Ch13Service1"> 
+		<property name="ch13BoardDao1" ref="ch13BoardDao1"></property> </bean>
 
-	<bean id="ch13Service1"
+<!-- 	<bean id="ch13Service1"
 		class="com.mycompany.webapp.service.Ch13Service1"
 		p:ch13BoardDao1-ref="ch13BoardDao1" />
-
+ -->
 
 	<!-- <bean id="ch13Service1" class="com.mycompany.webapp.service.Ch13Service1" 
 		></bean> -->

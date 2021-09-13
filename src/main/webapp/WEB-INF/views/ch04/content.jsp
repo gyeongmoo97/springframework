@@ -56,7 +56,7 @@
 			<script>
                 function checkData(form) {
                     // form의 제출 기능을 off
-                    event.preventDefault();
+                    //event.preventDefault();
 
                 	//유효성 검사 결과 변수
 					let checkResult = true;

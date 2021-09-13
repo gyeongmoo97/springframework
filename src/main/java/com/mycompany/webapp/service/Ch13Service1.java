@@ -16,13 +16,13 @@ public class Ch13Service1 {
 		logger.info(" Ch13Service1()실행");
 	}
 	// 생성자 주입을 위한 생성자 선언
-	public Ch13Service1(Ch13BoardDao1 ch13BoardDao1) {
-		this.ch13BoardDao1=ch13BoardDao1;
-		logger.info("Ch13Service1(Ch13BoardDao1 ch13BoardDao1)실행");
-	}
-	
+	/*	public Ch13Service1(Ch13BoardDao1 ch13BoardDao1) {
+			this.ch13BoardDao1=ch13BoardDao1;
+			logger.info("Ch13Service1(Ch13BoardDao1 ch13BoardDao1)실행");
+		}
+		*/
 	//setter 주입을 위한 Setter 선언
-	public void setCh13BoardDao1( Ch13BoardDao1 ch13BoardDao1 ) {
+	public void setCh13BoardDao1(Ch13BoardDao1 ch13BoardDao1 ) {
 		logger.info(" setCh13BoardDao1 실행  ");
 		this.ch13BoardDao1 = ch13BoardDao1;
 	}

@@ -1,6 +1,10 @@
 package com.mycompany.webapp.controller;
 
+import java.io.IOException;
+import java.io.PrintWriter;
+
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import org.json.JSONObject;
@@ -170,7 +174,7 @@ public class Ch08Controller {
 			return json;
 		}*/
 	
-	@GetMapping(value="/logoutAjax", produces="application/json;charset=UTF-8")
+	/*@GetMapping(value="/logoutAjax", produces="application/json;charset=UTF-8")
 	@ResponseBody
 	public String logoutAjax(HttpSession session) {
 		logger.info("실행");
@@ -181,7 +185,55 @@ public class Ch08Controller {
 		obj.put("result", "success");
 		String json = obj.toString();
 		return json;
+	}*/
+	
+	/*	@GetMapping(value="/logoutAjax")
+		
+		public void logoutAjax(HttpSession session, HttpServletResponse response) throws IOException {
+			logger.info("실행");
+			
+			session.invalidate();
+	//		session.removeAttribute("sessionMid");
+			response.setContentType("application/json; charset-UTF-8");
+			PrintWriter pw = response.getWriter();
+			
+			
+			
+			JSONObject obj = new JSONObject();
+			obj.put("result", "success");
+			String json = obj.toString();
+			
+			pw.println(json);
+	//		pw.flush();
+	//		pw.close();
+		}
+		*/
+@GetMapping(value="/logoutAjax")
+	
+	public void logoutAjax2(HttpSession session, HttpServletResponse response) throws IOException {
+		logger.info("실행");
+		
+//		session.invalidate();
+		session.removeAttribute("sessionMid");
+		response.setContentType("application/json; charset-UTF-8");
+		PrintWriter pw = response.getWriter();
+		
+		
+		
+		JSONObject obj = new JSONObject();
+		obj.put("result", "success");
+		String json = obj.toString();
+		
+		pw.println(json);
+//		pw.flush();
+//		pw.close();
 	}
+	
+	
+	
+	
+	
+	
 	//1단계2단계가 동시에 사용할 수 있도록 만들어 준다.
 	@ModelAttribute("inputForm")
 	// 원래 request 범위에 선언되어서 같은 컨트롤러 모든 메서드의 시작전에 실행되었는데
