@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+ 	<!-- Connection Pool -->
+ 	<bean id="dataSource" class="org.apache.commons.dbcp2.BasicDataSource" destroy-method="close">
+ 	<!-- 연결에 대한 정보 -->
+ 	<property name="driverClassName" value="oracle.jdbc.OracleDriver"></property>
+ 	<property name="url" value="jdbc:oracle:thin:@kosa1.iptime.org:50105:orcl"></property>
+ 	<property name="username" value="spring"></property>
+ 	<property name="password" value="oracle"></property>
+ 	<!-- CP 에 대한 정보  -->
+ 	<property name="initialSize" value="2"></property>
+ 	<property name="maxTotal" value="3"></property>
+ 	<property name="maxIdle" value="3"></property>
+ 	</bean>
+ 	
+ 	<!-- Mybatis 설정 -->
+ 	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+ 	<!-- mybatis 에 dataSource라는 커넥션 풀을 전달해서 이제 직접적으로 CP 사용 안함 마이바티스 거쳐서 사용함 -->
+ 	<property name="dataSource" ref="dataSource"></property>
+ 	<!-- 마이바티스 전체에 대한 설정 -->
+ 	<property name="configLocation" value="classpath:mybatis/mapper-config.xml"></property>
+ 	<!-- 테이블 별 sql문  -->
+ 	<property name="mapperLocations" value="classpath:mybatis/mapper/*.xml"></property>
+ 	
+ 	</bean>
+ 	
+ 	<!-- 실질적으로 sqlSessionTemplate를 사용함 sqlSessionTemplate생성시 sqlSessionFactory 를 넣어줌 그렇게 둘다씀 -->
+ 	<bean id="sqlSessionTemplate" class="org.mybatis.spring.SqlSessionTemplate">
+ 		<!-- 생성자가 없어서 명시적으로 생성자 주입을 해줘야한다.  -->
+ 		<constructor-arg ref="sqlSessionFactory"></constructor-arg>
+ 	</bean>
+</beans>

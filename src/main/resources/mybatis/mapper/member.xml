@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="member">
+	<!-- insert를 실행할 때 전달 받는 객체는 com.mycompany.webapp.dto.Ch14Member (=member)이것이다. -->
+	<!-- member의 값으로 들어가는것 을 member() 안에 지정하고 Value 안에 getter로 값을 얻는다. -->
+		<!-- #넣으면 get 임-->
+	<insert id="insert"
+		parameterType="member">
+		INSERT INTO member(mid, mname, mpassword, menabled, mrole)
+		VALUES(#{mid}, #{mname}, #{mpassword}, #{menabled}, #{mrole})
+	</insert>
+	<!-- paramatertpye으로 매개값 전달해줘야함 -->
+	<!-- resultType 으로 리턴함 -->
+	
+	<!-- select     ResultSet -->
+	<!-- 자동으로 member 객체에 들어가나?  -->
+	<select id="selectByMid" parameterType="string" resultType="member">
+		<!-- SELECT * -->
+		SELECT mid, mname, mpassword, menabled, mrole
+		FROM member
+		WHERE mid=#{mid}
+	</select>
+</mapper>

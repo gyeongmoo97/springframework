@@ -7,7 +7,9 @@
 		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
 
 	<bean id="ch13BoardDao1"
-		class="com.mycompany.webapp.dao.Ch13BoardDao1"></bean>
+		class="com.mycompany.webapp.dao.Ch13BoardDao1">
+		
+		</bean>
 
 	<!-- 생성자 주입 -->
 	<!-- <bean id="ch13Service1" class="com.mycompany.webapp.service.Ch13Service1"> 
