@@ -12,30 +12,32 @@
 
 
 
-	<!--카드 시작  -->
+		<!--카드 시작  -->
 		<div class="card m">
 
 			<div class="card-header"></div>
 			계좌 현황
 			<!--카드 내용 시작  -->
 			<div class="card-body">
-			
-			<table style="width:auto" class="table table-sm table-bordered">
-               <tr>
-                  <th style="width:50px">번호</th>
-                  <th style="width:100px">소유주</th>
-                  <th style="width:200px">잔고</th>
-               </tr>
-               
-               <c:forEach var="account" items="${list}">
-                  <tr>
-                     <td>${account.ano}</td>
-                     <td>${account.owner}</td>
-                     <td style="text-align:right;">${account.balance}</td>
-                  </tr>
-               </c:forEach>
-            </table>
-			
+				<c:if test="${transferError != null}">
+					<div class="alert alert-danger" role="alert">${transferError}</div>
+				</c:if>
+				<table style="width: auto" class="table table-sm table-bordered">
+					<tr>
+						<th style="width: 50px">번호</th>
+						<th style="width: 100px">소유주</th>
+						<th style="width: 200px">잔고</th>
+					</tr>
+
+					<c:forEach var="account" items="${list}">
+						<tr>
+							<td>${account.ano}</td>
+							<td>${account.owner}</td>
+							<td style="text-align: right;">${account.balance}</td>
+						</tr>
+					</c:forEach>
+				</table>
+
 			</div>
 			<!--카드 내용 끝 -->
 		</div>
