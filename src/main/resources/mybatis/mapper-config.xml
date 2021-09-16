@@ -12,6 +12,8 @@
 			<typeAlias type="com.mycompany.webapp.dto.Pager"
 			alias="pager"/>
 			
+			<typeAlias type="com.mycompany.webapp.dto.Ch16Account"
+			alias="account"/>
 	</typeAliases>
 
 

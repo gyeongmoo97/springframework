@@ -67,7 +67,7 @@ public class Ch14MemberService {
 			// DB에 회원 정보를 저장
 			if (dbMember == null) {
 				return LoginReslut.WRONG_ID;
-			} else if(dbMember.getMpassword()==member.getMpassword()){
+			} else if(dbMember.getMpassword().equals(member.getMpassword())){
 				return LoginReslut.SUCCESS;
 			}else {
 				return LoginReslut.WRONG_PW;

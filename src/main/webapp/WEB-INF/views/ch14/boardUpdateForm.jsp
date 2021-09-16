@@ -9,6 +9,7 @@
 	<div class="card-body">
 		<form id="boardUpdateForm" method="post" action="boardUpdate">
 			<input type="hidden" name="bno" value="${board.bno}"/>
+			<!-- board의 필수값 다 넘겨주기 위해 안보이는 bno넣는다 bdate는 SYSDATE넣ㄴ느다.-->
 			<div class="input-group">
 				<div class="input-group-prepend"><span class="input-group-text">btitle</span></div>
 				<input id="btitle" type="text" name="btitle" class="form-control" value="${board.btitle}">

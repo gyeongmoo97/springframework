@@ -30,7 +30,9 @@
 		<a href="getJwtCookie" class="btn btn-info btn-sm">JWT  쿠키 읽기</a>
 		
 			<script>
-			
+				function getCookie() {
+					console.log(document.cookie);
+				}
 			</script>
 		</div>
 

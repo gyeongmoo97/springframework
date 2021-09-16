@@ -32,11 +32,11 @@ public class Ch06Controller {
 		return "redirect:/";
 	}
 	
-	@GetMapping("/getFragmentHtml")
-	public String getFragmentHtml() {
-		logger.info("실행");
-		return "ch06/fragmentHtml";
-	}
+		@GetMapping("/getFragmentHtml")
+		public String getFragmentHtml() {
+			logger.info("실행");
+			return "ch06/fragmentHtml";
+		}
 	
 	@GetMapping("/getJson1")
 	public void getJson(HttpServletResponse response) throws Exception {
