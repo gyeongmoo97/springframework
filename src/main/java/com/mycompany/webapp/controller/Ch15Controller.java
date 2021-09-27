@@ -167,7 +167,6 @@ public class Ch15Controller {
 		
 		JSONObject jo = new JSONObject();
 		jo.put("result", "success");
-	
 		
 		SimpleDateFormat sdf = new SimpleDateFormat("yyyy.MM.dd");
 		JSONArray jsonArray = new JSONArray();

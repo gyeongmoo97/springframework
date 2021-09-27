@@ -30,27 +30,6 @@ public class Ch15Aspect8Around {
 		HttpSession session = request.getSession();
 		String mid = (String) session.getAttribute("sessionMid");
 		if (mid == null) {
-			
-//			String result= "redirect:/ch15/login"; //ajax 라서 리다이렉트 자제
-//			
-//			
-//			HttpServletResponse response = sra.getResponse();
-//			response.setContentType("application/json; charset=UTF-8");
-//			
-//			
-////			request.setAttribute("loginCheck", false);
-//			JSONObject jo = new JSONObject();
-//			
-//			
-//			jo.put("result", "authFail");
-//			String json = jo.toString();
-//			
-//			PrintWriter pw = response.getWriter();
-//			pw.write(json);
-//			pw.close();
-//			
-//			
-//			return null;
 			return "ch15/authFail";
 		}else {
 //			request.setAttribute("loginCheck", true);

@@ -41,7 +41,6 @@ public class Ch16AccountService {
 		return accounts;
 	}
 	
-	//트랜젝션 처리 전혀 안된것.
 	public TransferResult transfer1(int fromAno, int toAno, int amount) {
 		logger.info("실행");
 		
